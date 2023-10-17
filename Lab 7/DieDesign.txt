@@ -1,0 +1,302 @@
+Die.java:
+    HowTo 3.1 - 
+    1:
+    random generation between 1 and number of sides
+
+    2:
+    int value;
+    Die dice1 = new Die(6);
+
+    value = dice1.roll();
+
+    3:
+    /**
+    * A die that will get tossed
+    */
+    public class Die {
+        private int sides;
+        private Random generator;
+
+        /**
+        * Default Constructor
+        */
+        public Die() {
+
+        }
+
+        /**
+        * Constructor with number of sides
+        * @param sides number of sides on die
+        */
+        public Die(int sides) {
+
+        }
+
+        /**
+        * gets number of die sides
+        * @param sides number of sides on die
+        */
+        public void getSides(int sides) {
+
+        }
+
+        /**
+        * simulates rolling a die
+        * @return number that die landed on
+        */
+        public int roll() {
+
+        }
+    }
+
+    4:
+    private int sides;
+    private Random generator;
+
+    5:
+    public Die() {
+        sides = 0;
+    }
+
+    public Die(int numSides) {
+        sides = numSides;
+    }
+
+    public void setSides(int numSides) {
+        sides = numSides;
+    }
+
+    public int roll() {
+        generator = new Random();
+        return generator.nextInt(1, sides+1);
+    }
+
+
+SimulateDieRoll.java:
+    HowTo 3.1 - 
+    1:
+    roll one die for a million times
+    roll two die for a million times
+    output win percentage
+    return wins
+    return losses
+
+    2:
+    SimulateDieRoll die1 = new SimulateDieRoll(6, 1000000);
+    die1.roll()
+
+    3:
+    /**
+    * Simulates 1 million rolls for one die/two dices
+    */
+    public class SimulateDieRoll {
+        /**
+        * Default Constructor
+        */
+        public SimulateDieRoll() {
+
+        }
+
+        /**
+        * Constructor with two inputs
+        * @param numSides number of Sides in die
+        * @param numTries number of times to roll die
+        */
+        public SimulateDieRoll(int numSides, int numTries) {
+
+        }
+
+        /**
+        * set number of sides for cube
+        * @param numSides number of sides
+        */
+        public void setSides(int numSides) {
+
+        }
+
+        /**
+        * set number of tries to roll die
+        * @param numTries number of trie
+        */
+        public void setTries(int numTries) {
+
+        }
+
+        /**
+        * rolls a die for a set number of times
+        */
+        public void singleRoll() {
+
+        }
+
+        /**
+        * rolls two dice for a set number of times
+        */
+        public void doubleRoll() {
+
+        }
+
+        /**
+        * get number of wins
+        * @return total wins
+        */
+        public int getWins() {
+
+        }
+
+        /**
+        * get number of losses
+        * @return total losses
+        */
+        public int getLosses() {
+
+        }
+
+        /**
+        * formats string with win percentage
+        */
+        public String toString() {
+
+        }
+    }
+
+    4:
+    private int dieSides;
+    private int tries;
+    private int numWins;
+    private int numLosses;
+
+    5:
+    public SimulateDieRoll() {
+        tries = 0;
+        d1 = new Die();
+        d2 = new Die();
+    }
+
+    public SimulateDieRoll(int numSides, int numTries) {
+        tries = numTries;
+        d1 = new Die(numSides);
+        d2 = new Die(numSides);
+    }
+
+    public void setSides(int numSides) {
+        d1.setSides(numSides);
+        d2.setSides(numSides);
+    }
+
+    public void setTries(int numTries) {
+        tries = numTries;
+    }
+
+    public void singleRoll() {
+        wins = 0;
+        losses = 0;
+        for (int i = 0; i < tries; i++) {
+            boolean noMatches = true;
+            for (int j = 0; j < CHECKNUM_SINGLEDIE; j++) {
+                if (d1.roll() == 6) {
+                    noMatches = false;
+                    break;
+                }
+            }
+            if (noMatches) {
+                losses++;
+            }
+            else {
+                wins++;
+            }
+        }
+    }
+
+    public void doubleRoll() {
+        wins = 0;
+        losses = 0;
+        for (int i = 0; i < tries; i++) {
+            boolean noMatches = true;
+            for (int j = 0; j < CHECKNUM_DOUBLEDICE; j++) {
+                if (d1.roll() == 6 && d2.roll() == 6) {
+                    noMatches = false;
+                    break;
+                }
+            }
+
+            if (noMatches) {
+                losses++;
+            }
+            else {
+                wins++;
+            }
+        }
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public String toString() {
+        return String.format("Win Percentage: %.2f", ((double)wins / ((double)wins + (double)losses) * 100));
+    }
+
+    HowTo 6.1 -
+    1:
+    for...
+        roll die1 and die2
+        if the value of die1 and die1 is six
+            add one to win value
+        if not then add one to loss value
+        set variable to corresponding value
+
+    2:
+    run the loop 24 times
+
+    3:
+    a for loop is used since we know the count
+
+    4:
+    total wins = 0
+    total losses = 0
+    count = 0
+
+    5:
+    After the loop has finished, there should be a number of wins and losses
+
+    6:
+    +-------+------+--------+
+    | count | wins | losses |
+    +-------+------+--------+
+    | 1     | 0    | 1      |
+    +-------+------+--------+
+    | 2     | 0    | 2      |
+    +-------+------+--------+
+    | 3     | 0    | 3      |
+    +-------+------+--------+
+    | 4     | 0    | 4      |
+    +-------+------+--------+
+    | 5     | 0    | 5      |
+    +-------+------+--------+
+    | 6     | 1    | 5      |
+    +-------+------+--------+
+    | 7     | 1    | 6      |
+    +-------+------+--------+
+    | 8     | 1    | 7      |
+    +-------+------+--------+
+    | 9     | 2    | 7      |
+    +-------+------+--------+
+    | 10    | 3    | 7      |
+    +-------+------+--------+
+    | 11    | 3    | 8      |
+    +-------+------+--------+
+
+    6:
+    for (int i = 0; i < 24; i++) {
+        if (Die1.roll() == 6 && Die2.roll == 6) {
+            wins++;
+        }
+        else {
+            losses++;
+        }
+    }

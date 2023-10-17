@@ -1,0 +1,13 @@
+1:
+set the current combination for lock
+get the current combination for lock
+set the key for the lock
+get the key for the lock
+find twists needed for that digit
+find the shortest path to that digit
+
+2:
+UnlockLock unl = new UnlockLock()
+
+unl.setKey(5714)
+unl.setCurrentCombination(1729)
