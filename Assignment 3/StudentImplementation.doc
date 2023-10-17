@@ -1,0 +1,106 @@
+1:
+  - set student ID number
+  - set first name and last name of student
+  - get first name and last name of student
+  - add quiz score to total score
+  - get the total score
+  - get the average score
+
+2:
+int studentID = 123456
+Student newStudent = new Student("firstName", "lastName", studentID);
+newStudent.addQuiz(90);
+System.out.println(newStudent.getName());
+System.out.println(newStudent.getTotalScore());
+System.out.println(newStudent.getAverageScore()); 
+
+3:
+public class Student {
+    /**
+     * Constructs a Student with the previous student's ID number
+     * @param firstName the first name of the student
+     * @param lastName the last name of the student
+     * @param lastiDNUmber the ID number of the previous student
+     */
+    public Student(String firstName, String lastName, int LastiDNumber){
+
+    }
+    /**
+     * sets current student's ID number to the previous student's ID number plus one
+     * @param previousiDNumber the ID number of the previous student
+     */
+    private void setStudentIdNumber(int previousiDNumber) {
+
+    }
+    /**
+     * Recieves and stores the first and last name of the student
+     * @return first name and last name of student
+     */
+    public String getName() {
+
+    }
+    /**
+     * gets id number of student
+     * @return ID number of student
+     */
+    public int getID() {
+
+    }
+    /**
+     * adds a quiz score to total quiz score of student
+     * @param score the score of the current quiz
+     */
+    public void addQuiz(int score) {
+
+    }
+    /**
+     * computes the total score for the student's quizzes
+     * @return the student's total quiz score
+     */
+    public double getTotalScore() {
+
+    }
+    /**
+     * computes the average of all the quiz scores
+     * @return the student's average quiz score
+     */
+    public double getAverageScore() {
+
+    }
+}
+
+4:
+public class Student {
+    private String studentFirstName;
+    private String studentLastName;
+    private int idNumber;
+    private double totalquizScore = 0;
+    private int numberOfQuizzes = 0;
+}
+
+5:
+public class Student {
+    public Student(String firstName, String lastName, int LastiDNumber){
+        studentFirstName = firstName;
+        studentLastName = lastName;
+        setStudentIdNumber(lastiDNUmber);
+    }
+    private void setStudentIdNumber(int previousiDNumber) {
+        idNumber = previousiDNumber++;
+    }
+    public String getName(String firstName, String lastName) {
+        return studentFirstName + studentLastName;
+    }
+    public int getID() {
+        return idNumber;
+    }
+    public void addQuiz(int score) {
+        totalquizScore += score;
+    }
+    public double getTotalScore() {
+        return totalquizScore;
+    }
+    public double getAverageScore() {
+        return totalquizScore / numberOfQuizzes;
+    }
+}
