@@ -1,0 +1,72 @@
+1:
+- greets name
+- says goodbye
+- refuses help
+
+2:
+Greeting dave = new Greeting("Nathan);
+dave.sayHello();
+dave.sayGoodbye();
+dave.refuseHelp();
+
+3:
+/**
+ * Says hello, goodbye, and refueses help to person
+ */
+public class Greeter {
+    /**
+     * personalized greeter
+     * @param nameOfPerson nome of person
+     */
+    public Greeter(String nameOfPerson) {
+
+    }
+
+    /**
+     * hello person
+     * @return basic hello greeting
+     */
+    public String sayHello() {
+
+    }
+
+    /**
+     * goodbye person
+     * @return message saying goodbye
+     */
+    public String sayGoodbye() {
+
+    }
+
+    /**
+     * refuse to help
+     * @return message refusing to help person
+     */
+    public String refuseHelp() {
+
+    }
+}
+
+4:
+public class Greeter {
+    private String name;
+}
+
+5:
+public class Greeter {
+    public Greeter(String nameOfPerson) {
+        name = nameOfPerson;
+    }
+
+    public String sayHello() {
+        return "Hello, " + name;
+    }
+
+    public String sayGoodbye() {
+        return "Bye, " + name;
+    }
+
+    public String refuseHelp() {
+        return "I am sorry, " + name + ". I am afraid I can't do that.";
+    }
+}

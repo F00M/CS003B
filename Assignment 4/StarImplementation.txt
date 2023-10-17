@@ -1,0 +1,63 @@
+1:
+- draw star
+
+2:
+Star left = new Star(getWidth()/2 - 30, getHeight()/2);
+Star middle = new Star(getWidth()/2, getHeight()/2);
+Star right = new Star(getWidth()/2 + 30, getHeight()/2);
+
+left.draw(g2);
+middle.draw(g2);
+right.draw(g2);
+
+3:
+/**
+ * Star shape that can be position anywhere in the window
+ */
+public class Star {
+    /**
+     * Creates a star at coords (middleX, middleY)
+     * @param middleX X-Coordinate of the star shape
+     * @param middleY Y-Coordinatae of the star shape
+     */
+    public Star(int middleX, int middleY) {
+
+    }
+
+    /**
+     * Draws star
+     * @param g2 graphics
+     */
+    public void draw(Graphics2D g2) {
+        
+    }
+}
+
+4:
+private int xCoord;
+private int yCoord;
+
+5:
+public class Star {
+    public Star(int middleX, int middleY) {
+        xCoord = middleX;
+        yCoord = middleY;
+    }
+
+    public void draw(Graphics2D g2) {
+        // horizontal line of star
+        Line2D.Double striaghtVert = new Line2D.Double(xCoord, yCoord+10, xCoord, yCoord-10);
+        // vertical line of star
+        Line2D.Double straightHoriz = new Line2D.Double(xCoord-10, yCoord, xCoord+10, yCoord);
+        // first cross
+        Line2D.Double cross1 = new Line2D.Double(straightHoriz.getX1(), striaghtVert.getY1(), straightHoriz.getX2(), striaghtVert.getY2());
+        // second cross
+        Line2D.Double cross2 = new Line2D.Double(straightHoriz.getX1(), striaghtVert.getY2(), straightHoriz.getX2(), striaghtVert.getY1());
+
+        g2.draw(striaghtVert);
+        g2.draw(straightHoriz);
+        g2.draw(cross1);
+        g2.draw(cross2);
+    }
+}
+

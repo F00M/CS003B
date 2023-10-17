@@ -1,0 +1,65 @@
+1:
+- drain battery by amount
+- charge battery to full capacity
+- return the remaining charge in battery
+
+2:
+Battery battOne = new Battery(2000);
+battOne.drain(1500);
+System.out.println(battOne.getRemainingCharge());
+battOne.charge();
+
+3:
+/**
+ * Battery with set charge (in mAh)
+ */
+public class Battery {
+    /**
+     * Creates a battery with a charge
+     * @param capacity charge
+     */
+    public Battery(double capacity) {
+
+    }
+    /**
+     * drains battery my given amount
+     * @param amount total charge to remove
+     */
+    public void drain(double amount) {
+
+    }
+    /**
+     * charges battery to full capacity
+     */
+    public void charge() {
+
+    }
+    /**
+     * gets the remaining charge in battery
+     * @return charge of battery
+     */
+    public double getRemainingCharge() {
+
+    }
+}
+
+4:
+private double totalCharge;
+private double currentCharge;
+
+5:
+public class Battery {
+    public Battery(double capacity) {
+        totalCharge = capacity;
+        currentCharge = totalCharge;
+    }
+    public void drain(double amount) {
+        currentCharge -= amount;
+    }
+    public void charge() {
+        currentCharge = totalCharge;
+    }
+    public double getRemainingCharge() {
+        return currentCharge;
+    }
+}
