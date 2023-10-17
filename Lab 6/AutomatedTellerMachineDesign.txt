@@ -1,0 +1,37 @@
+HowTo 5.1 - 
+1:
+pin = 1234?
+
+2:
+System.out.println("Pin is correct!")
+correct = true;
+
+3:
+count--;
+System.out.println("Wrong pin! You have %d attempt(s) remaining\n", count);
+
+4:
+The condition is correct because you are checking to make sure the pin is exactly the same as 1234
+
+5:
+No duplication
+
+6:
+pin = 123;
+- pin not equal to 1234 so second branch will execute
+- count increments down
+- print "Wrong pin! You have 2 attempt(s) remaining"
+
+pin = 1234;
+- pin satisfies condition so first branch will execute
+- correct set to true
+- print "Pin is correct!"
+
+7:
+if (pin.matches("1234)) {
+    System.out.println("Your PIN is correct")
+    correct = true;
+}
+else {
+    System.out.printf("Wrong pin! You have %d attempt(s) remaining\n", count);
+}

@@ -1,0 +1,165 @@
+1:
+convert to a unit from another unit given a value
+
+2:
+UnitConversion unit = new UnitConversion();
+System.out.println(unit.convert("ft", "km", 100));
+
+3:
+/**
+ * Converts fl. oz, gal -> ml, l
+ *          oz, lb -> g, kg
+ *          in, ft, mi -> mm, cm, m, km
+ */
+public class UnitConversion {
+    /**
+     * Default constructor
+     */
+    public UnitConversion() {
+
+    }
+
+    /**
+     * Converts the value of one unit to another unit
+     * @param x original unit
+     * @param y converted unit
+     * @param z original value
+     * @return string representation of conversion
+     */
+    public void convert(String x, String y, double z) {
+
+    }
+}
+
+4:
+none
+
+5:
+public class UnitConversion {
+    public String convert(String x, String y, double z) {
+        double value = 0;
+
+        if (x.equals("fl. oz")) {
+            if (y.equals("ml")) {
+                value = z * 29.57;
+            }
+            else {
+                value = z * 0.02957;
+            }
+        }
+
+        else if (x.equals("gal")) {
+            if (y.equals("ml")) {
+                value = z * 3785;
+            }
+            else {
+                value = z * 3.785;
+            }
+        }
+
+        else if (x.equals("oz")) {
+            if (y.equals("g")) {
+                value = z * 28.35;
+            }
+            else {
+                value = z * 0.02835;
+            }
+        }
+
+        else if (x.equals("lb")) {
+            if (y.equals("g")) {
+                value = z * 453.6;
+            }
+            else {
+                value = z * 0.4536;
+            }
+        }
+
+        else if (x.equals("in")) {
+            if (y.equals("mm")) {
+                value = z * 25.4;
+            }
+            else if (y.equals("cm")) {
+                value = z * 2.54;
+            }
+            else if (y.equals("m")) {
+                value = z * 0.0254;
+            }
+            else {
+                value = z * 2.54e-5;
+            }
+        }
+
+        else if (x.equals("ft")) {
+            if (y.equals("mm")) {
+                value = z * 304.8;
+            }
+            else if (y.equals("cm")) {
+                value = z * 30.48;
+            }
+            else if (y.equals("m")) {
+                value = z * 0.3048;
+            }
+            else {
+                value = z * 3.048e-4;
+            }
+        }
+
+        else if (x.equals("mi")) {
+            if (y.equals("mm")) {
+                value = z * 1.609e6;
+            }
+            else if (y.equals("cm")) {
+                value = z * 160934;
+            }
+            else if (y.equals("m")) {
+                value = z * 1609;
+            }
+            else {
+                value = z * 1.609;
+            }
+        }
+
+        return String.format("%.2f %s = %.2f %s", z, x, value, y);
+    }
+}
+
+
+
+1:
+original unit is fl.oz?
+
+2:
+if converted unit is ml, multiply original value by 29.57
+
+3:
+multiply original value by 0.02957
+
+4:
+Condition is correct for checking if the units are compatible with each other
+
+5:
+there are two statements in the form of: converted value = original value * ...
+computation can be done afterwareds: converted value = original value * factor
+
+6:
+original unit = fl.oz
+converted unit = ml
+    - factor = 29.57
+    - converted value = original value * factor
+
+original unit = fl. oz
+converted unit = l
+    - factor = 0.02957
+    - converted value = original value * factor
+
+7:
+if (original.matches("fl. oz")) {
+    if (converted.matches("ml")) {
+        factor = 29.57;
+    }
+    else {
+        factor = 0.02957;
+    }
+}
+converted value = original value * factor;
