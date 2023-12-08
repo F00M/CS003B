@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<customers>
+    <customer>
+        <name>Nathan Lieu</name>
+        <phone>6268981629</phone>
+        <address>1570 E Colorado Blvd, Pasadena CA 91106</address>
+        <discount>45</discount>
+    </customer>
+    <customer>
+        <name>Michelle Lau</name>
+        <phone>6264135200</phone>
+        <address>347 E Main St, Alhambra CA 91801</address>
+        <discount>0</discount>
+    </customer>
+</customers>
